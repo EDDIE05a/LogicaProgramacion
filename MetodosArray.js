@@ -12,7 +12,7 @@ function numerosPares(n){
 }
 
 
-// Ejercicio 2️⃣: Contar cuántas veces aparece una letra en un texto
+//--------------------------------------------------------METODOS INTERACCION CON ARRAYS--------------------------------------------------------------
 
 /* METODOS
     SPLIT -> Convierte en array segun el espacio o valor entre comillas (""," " o ",")
@@ -37,4 +37,84 @@ function eliminarUltimoElemento(array){
 
 function unirPalabras(array){
     return array.join(" ");
+}
+
+/* METODOS
+    PUSH -> Agrega elementos aL final de un array
+*/
+
+function agregarElemento(array, elemento){
+    array.push(elemento);
+    return array;
+}
+
+/* METODOS
+    SHIFT -> Elimina el primer elemento de un array y lo devuelve.
+*/
+
+function eliminarPrimerElemento(array){
+    array.shift();
+    return array;
+}
+
+/* METODOS
+
+    UNSHIFT -> Agrega uno o más elementos al inicio de un array y devuelve la nueva longitud.
+*/
+
+function agregarAlInicio(array, elemento){
+    array.unshift(elemento);
+    return array;
+}
+ 
+/* METODOS
+    SLICE ->  Copia una parte de un array en un nuevo array sin modificar el original.
+*/
+function obtenerSubArray(array, inicio, fin){
+    let subarray = array.slice(inicio, fin);
+    return subarray;
+}
+
+/* METODOS
+    SPLICE -> Modifica el array original, eliminando, reemplazando o agregando elementos en una posición específica.
+*/
+
+function modificarArray(array, inicio, cantidad,  ...elementos){
+    array.splice(inicio, cantidad,  ...elementos);
+    return array; 
+}
+
+function insertarSinEliminar(array, indice, ...elementos){
+    array.splice(indice, 0, ...elementos )
+    return array;
+}
+
+function reemplazarElementos(array, indice, cantidad, ...elementos){
+    array.splice(indice,cantidad, ...elementos)
+    return array;
+}
+
+function intercambiarElementos(array, i, j){
+    let temp = array[i];  
+    array[i] = array[j];  
+    array[j] = temp;     
+    return array;
+}
+
+function invertirArray(array){
+    let arrayInvertido = [];
+    for(let i = array.length - 1; i >= 0; i--){
+        arrayInvertido.push(array[-i]);
+    }
+    return arrayInvertido;
+}
+
+function contarPalabras(frase){
+    let arrayFrase = frase.split(" ");
+    let cont, acum = 0;
+    for(let i = 0; i < arrayFrase.length; i++ ){
+        cont++;
+        acum = acum + cont;
+    }
+    return acum;
 }
