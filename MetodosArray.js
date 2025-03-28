@@ -118,3 +118,18 @@ function contarPalabras(frase){
     }
     return acum;
 }
+
+
+// ---------------------- 28/03/2025-------------------------
+
+// EJERCICIO
+// Crea una función numeroMayor(array) que reciba un 
+// array de números y devuelva el número más grande de la lista.
+
+// Funcion Math.Max.
+// ... es para indicarle al sistema que va a recibir multiples valores. 
+
+function numeroMayor(array){
+    return Math.max(...array);
+}
+
