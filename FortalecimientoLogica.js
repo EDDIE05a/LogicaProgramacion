@@ -105,3 +105,55 @@ function calcularPromedio(array){
     prom = suma/cont;
     return prom;
 }
+
+
+// EJERCICIO H 
+// Escribe una función productoTotal(array) que multiplique todos los números del array y devuelva el resultado.
+
+function productoTotal(array){
+    let multiplicacion = 1;
+
+    for(let i = 0; i < array.length; i++){
+        multiplicacion *= array[i];
+    }
+
+    return multiplicacion;
+}
+
+// EJERCICIO I
+// Crea una función filtrarPrimos(array) que devuelva un nuevo array con solo los números primos del array original.
+
+function filtrarPrimos(array){
+    let arrayPrimos = [];
+
+    for(let i = 0; i < array.length; i++){
+        let cont = 1;
+        let acum = 0;
+        while(cont <= array[i]){
+            if(array[i] % cont == 0){
+                acum ++;
+            }
+            cont++;
+        }
+        if(acum == 2){
+            arrayPrimos.push(array[i]);
+        }
+        
+    }
+    return arrayPrimos;
+}
+
+// EJERCICIO J
+// Escribe contarOcurrencias(array, num), que cuente cuántas veces aparece un número num en el array.
+
+
+function contarOcurrencias(array, num){
+    let cont = 0;
+    for(let i = 0; i < array.length; i++){
+        if(array[i] == num){
+            cont++;
+        }
+    }
+    return cont;
+}
+
