@@ -157,3 +157,32 @@ function contarOcurrencias(array, num){
     return cont;
 }
 
+// EJERCICIO K
+// Crea una función primerPar(array) que devuelva el primer número par encontrado en el array. Si no hay números pares, devuelve null.
+
+function primerPar(array){
+    for(let i = 0; i < array.length; i++){
+        if(array[i] % 2 == 0){
+            return array[i];
+        }
+    }
+    return null;
+}
+
+// EJERCICIO L
+// Crea una función existeNumero(array, num) que devuelva true si el número está en el array y false si no lo está.
+
+function existeNumeroFor(array, num){
+    for(let i = 0; i < array.length; i++){
+        if(array[i] == num){
+            return true;
+        }
+    }
+    return false;
+}
+
+function existeNumeroForEach(array, num){
+    array.forEach(element => {
+        
+    });
+}
