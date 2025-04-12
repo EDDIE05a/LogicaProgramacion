@@ -6,4 +6,10 @@ edad = 25              # int
 altura = 1.65          # float
 es_estudiante = True   # bool
 
+if edad < 13:
+    print("niño") 
+elif edad < 18:
+    print("Adolescente") 
+else:
+    print("Adulto") 
 
