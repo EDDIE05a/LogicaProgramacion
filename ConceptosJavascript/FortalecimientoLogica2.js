@@ -119,5 +119,84 @@ function filtrarEntre(array, min, max){
     return arrayRango;
 }
 
-// Crea una función todosMayoresQue(array, valor) que devuelva true si todos los elementos del arreglo son mayores que valor.
+// Crea una función hayDuplicados(array) que devuelva true si hay al menos un número repetido en el array, y false si todos son únicos.
+
+function hayDuplicados(array) {
+    let arrayVerificacion = [];
+    for (let i = 0; i < array.length; i++) {
+        if (arrayVerificacion.includes(array[i])) {
+            return true;
+        } else {
+            arrayVerificacion.push(array[i]);
+        }
+    }
+    return false; 
+}
+
+// Crea una función que cuente cuántos números impares hay en el array.
+
+function contarImpares(array){
+    let cont = 0;
+    array.forEach(num => {
+        if(num % 2 == 1){
+            cont++
+        }
+    });
+    return cont;
+}
+
+// Devuelve un nuevo array con los primeros n elementos del array original.
+
+function primerosN(array, n){
+    let arrayHastaN = [];
+    for(let i = 0; i < array.length; i++){
+        if(i < n){
+            arrayHastaN.push(array[i]);
+        }
+    }
+    return arrayHastaN;
+}
+
+// Devuelve un nuevo array sin los números negativos.
+
+function eliminarNegativos(array){
+    let nuevoArray = [];
+    for(let i = 0; i < array.length; i++){
+        if(array[i] >= 0){
+            nuevoArray.push(array[i]);
+        }
+    }
+    return nuevoArray;
+}
+
+// Suma los números del array hasta que encuentre un número igual al tope (sin incluirlo). Si no lo encuentra, suma todo.
+// Ejemplo: sumaHastaEncontrar([1, 2, 3, 4, 5], 4) // ➜ 6 (1+2+3)
+
+function sumaHastaEncontrar(array, tope){
+    let suma = 0;
+    for(let i = 0; i < array.length; i++){
+        if(array[i] != tope){
+            suma += array[i];
+        }
+        else{
+            break;
+        }
+    }
+    return suma; 
+}
+
+// Devuelve un nuevo array solo con los elementos que están duplicados en el array original (sin repetirlos).
+// Ejemplo: elementosDuplicados([1, 2, 2, 3, 4, 4, 4, 5]) // ➜ [2, 4]
+
+function elementosDuplicados(array){
+    let nuevoArray = [];
+    let cont = 0;
+
+    for(let i = 0; i < array.length; i++){
+        if (array.includes(array[i])) {
+            nuevoArray.push(array[i]);
+        }
+            
+    }
+} 
 
