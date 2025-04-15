@@ -189,14 +189,24 @@ function sumaHastaEncontrar(array, tope){
 // Ejemplo: elementosDuplicados([1, 2, 2, 3, 4, 4, 4, 5]) // ➜ [2, 4]
 
 function elementosDuplicados(array){
-    let nuevoArray = [];
-    let cont = 0;
+    let duplicados = [];
 
     for(let i = 0; i < array.length; i++){
-        if (array.includes(array[i])) {
-            nuevoArray.push(array[i]);
+        let cont = 0;
+
+        for(let j = 0; j < array.length; j++){
+            if(array[i] === array[j]){
+                cont++;
+            }
         }
-            
+
+        if(cont > 1 && !duplicados.includes(array[i])){
+            duplicados.push(array[i]);
+        }
     }
-} 
+
+    return duplicados;
+}
+
+
 
