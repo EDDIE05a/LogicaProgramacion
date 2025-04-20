@@ -186,3 +186,16 @@ function existeNumeroForEach(array, num){
         
     });
 }
+
+// EJERCICIO M 
+// Crea una funcion numMayor(array) que devuelva el numero mas alto en un array.
+
+function numMayor(array){
+    let numero = array[0];
+    for (let index = 1; index < array.length; index++) {
+        if(array[index] > numero){
+            numero = array[index] ;
+        } 
+    }
+    return numero;
+}

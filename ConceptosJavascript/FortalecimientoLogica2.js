@@ -35,7 +35,7 @@ function reemplazarCeros(array, nuevoValor){
     return array;
 }
 
-// Crea una función multiplicarArray(array) que multiplique todos los elementos del arreglo y devuelva el resultadoooioo.
+// Crea una función multiplicarArray(array) que multiplique todos los elementos del arreglo y devuelva el resultado.
 
 function multiplicarArray(array){
     let acum = 1;
