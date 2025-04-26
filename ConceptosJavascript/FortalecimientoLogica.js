@@ -199,3 +199,12 @@ function numMayor(array){
     }
     return numero;
 }
+
+// EJERCICIO N
+// Crea un funcion cree una piramide con el caracter que ingrese el usuario.
+
+function piramideCaracter(caracter){
+    for(let i = 0; i < 5; i++){
+        console.log(caracter);
+    }
+}

@@ -252,3 +252,82 @@ function sumaColumnas(matriz){
 }
 
 
+// Crea una función que devuelva un nuevo array donde cada elemento representa la cantidad de números pares que hay en cada fila de la matriz.
+
+function paresPorFila(matriz){
+
+    let newArray = [];
+
+    for(let i = 0; i < matriz.length; i++){
+        let cont = 0;
+        for(let j = 0; j < matriz[i].length; j++){
+            if(matriz[i][j] % 2 === 0){
+                cont++;
+            }
+        }
+        newArray.push(cont);
+    }
+    return newArray;
+}
+
+// Crea una función que reciba una matriz de números y devuelva un nuevo array donde cada elemento sea el mayor número encontrado en cada fila de la matriz.
+
+function mayorPorFila(matriz){
+    let nuevoArray = [];
+    for(let i = 0; i < matriz.length; i++){
+        let indice = [i][0];
+        for(let j = 0; j < matriz[i].length; j++){
+            if(matriz[i][j] > indice){
+                indice = matriz[i][j];
+            }
+        }
+        nuevoArray.push(indice);
+    }
+    return nuevoArray;
+}
+ 
+
+// Crea una función que reciba una matriz de números (positivos y negativos) y devuelva una nueva matriz donde todos los números negativos sean reemplazados por 0. Los números positivos deben quedar igual.
+
+function matrizSinNegativos(matriz) {
+    let nuevaMatriz = [];
+
+    for (let i = 0; i < matriz.length; i++) {
+        let nuevaFila = [];
+
+        for (let j = 0; j < matriz[i].length; j++) {
+            if (matriz[i][j] < 0) {
+                nuevaFila.push(0);
+            } else {
+                nuevaFila.push(matriz[i][j]);
+            }
+        }
+
+        nuevaMatriz.push(nuevaFila);
+    }
+
+    return nuevaMatriz;
+}
+
+// Crea una función que reciba una matriz cuadrada (mismo número de filas que de columnas) y devuelva una nueva matriz donde:
+// Los elementos que están en la diagonal principal sean reemplazados por el número 0.
+// Todos los demás elementos se mantengan igual.
+
+function matrizDiagonalesCero(matriz) {
+    let nuevaMatriz = [];
+    for (let fila = 0; fila < matriz.length; fila++) {
+        let nuevaFila = [];
+        for (let columna = 0; columna < matriz[fila].length; columna++) {
+            if (fila === columna) { 
+                nuevaFila.push(0);
+            } else {
+                nuevaFila.push(matriz[fila][columna]);
+            }
+        }
+        nuevaMatriz.push(nuevaFila);
+    }
+    return nuevaMatriz;
+}
+
+
+
