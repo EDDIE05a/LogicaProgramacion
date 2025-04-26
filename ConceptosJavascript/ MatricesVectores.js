@@ -200,4 +200,55 @@ function sumarMatrizForEach(matriz){
 }
 
 
+// Crea una función invertirVector(vector) que reciba un array (vector) y devuelva uno nuevo con los elementos en orden inverso.
+
+function invertirVector(vector){
+    let newArray = [];
+    for(let i = vector.length - 1; i >= 0; i--){
+        newArray.push(vector[i]);
+    }
+    return newArray;
+}
+
+// Crea una función sumaFilas(matriz) que reciba una matriz y devuelva un array con la suma de cada fila.
+
+function sumaFilas(matriz){
+    let newArray = [];
+    for(let i = 0; i < matriz.length; i++){
+        let suma = 0;
+        for(let j = 0; j < matriz[i].length; j++){
+            suma += matriz[i][j];
+        }
+        newArray.push(suma);
+    }
+    return newArray;
+}
+
+// Crea una función encontrarNumero(matriz, num) que devuelva true si el número está en la matriz y false si no está.
+
+function encontrarNumero(matriz, num){
+    for(let i = 0; i < matriz.length; i++){
+        for(let j = 0; j < matriz[i].length; j++){
+            if(num == matriz[i][j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+// Crea una función sumaColumnas(matriz) que devuelva un array con la suma de cada columna de la matriz.
+
+function sumaColumnas(matriz){
+    let newArray = [];
+    for(let j = 0; i < matriz[0].length; j++){
+        let suma = 0;
+        for(let i = 0; i < matriz.length; i++){
+            suma += matriz[j][i];
+        }
+        newArray.push(suma);
+    }
+    return newArray;
+}
+
 
