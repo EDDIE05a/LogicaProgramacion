@@ -1,10 +1,13 @@
 {
-    "name": "Kotlin Dev Environment",
-    "image": "mcr.microsoft.com/devcontainers/java:0-17",
-    "extensions": [
-      "fwcd.kotlin",
-      "formulahendry.code-runner"
-    ],
-    "postCreateCommand": "sdk install kotlin"
-  }
-  
+  "name": "Kotlin Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/java:0-17",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "formulahendry.code-runner"
+      ]
+    }
+  },
+  "postCreateCommand": "sdk install kotlin"
+}
