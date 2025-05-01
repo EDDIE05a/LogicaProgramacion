@@ -9,5 +9,8 @@
       ]
     }
   },
-  "postCreateCommand": "sdk install kotlin"
+  
+  "postCreateCommand": "echo 'export PATH=$PATH:/usr/local/sdkman/candidates/kotlin/current/bin' >> ~/.bashrc"
+
+
 }
