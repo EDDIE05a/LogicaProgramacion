@@ -99,3 +99,39 @@ fun numbersGreaterAverage (array: Array<Int>): Int{
 
 // Crea una función que reciba un arreglo de enteros y devuelva true si los elementos están en orden ascendente, o false en caso contrario.
 
+fun arregloAscendente(arreglo: Array<Int>): Boolean {
+    var anterior = arreglo[0]
+    for (i in 1 until arreglo.size) {
+        if (arreglo[i] < anterior) return false
+        anterior = arreglo[i]
+    }
+    return true
+}
+
+
+// Escribe una función que reciba un arreglo de enteros y retorne un nuevo arreglo con los elementos en orden inverso.
+
+fun arregloInverso(arreglo: Array<Int>): Array<Int> {
+    val nuevoArreglo = mutableListOf<Int>()
+
+    for (i in arreglo.lastIndex downTo 0) {
+        nuevoArreglo.add(arreglo[i]) 
+    }
+
+    return nuevoArreglo.toTypedArray()  
+}
+
+
+// Crea una función que reciba un arreglo de enteros y retorne true si el arreglo es igual leído de izquierda a derecha y de derecha a izquierda.
+
+fun arregloPalindromo(array: Array<Int>): Boolean {
+    val nuevoArreglo = mutableListOf<Int>()
+    for (i in array.lastIndex downTo 0) {
+        nuevoArreglo.add(array[i])
+    }
+
+    val arrayInverso = nuevoArreglo.toTypedArray()
+
+    return arrayInverso.contentEquals(array)
+}
+
