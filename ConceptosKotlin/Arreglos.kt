@@ -135,3 +135,97 @@ fun arregloPalindromo(array: Array<Int>): Boolean {
     return arrayInverso.contentEquals(array)
 }
 
+// Pide al usuario un número n y muestra la suma de todos los números del 1 al n.
+
+fun sumaHasta(numero: Int): Int {
+    var suma: Int = 0
+    for(num in 1..numero step 1){
+        suma += num
+    }
+    return suma
+}
+
+// Crea una función que reciba un texto y cuente cuántas vocales (a, e, i, o, u) contiene. Ignora mayúsculas y acentos.
+
+fun contarVocales(texto: String): Int {
+    var cont = 0
+    val vocales = arrayOf("a", "e", "i", "o", "u")
+
+    val conversionTexto = texto
+        .lowercase()
+        .replace("á", "a")
+        .replace("é", "e")
+        .replace("í", "i")
+        .replace("ó", "o")
+        .replace("ú", "u")
+
+    for (caracter in conversionTexto) {
+        if (vocales.contains(caracter.toString())) {
+            cont++
+        }
+    }
+
+    return cont
+}
+
+// Pide una palabra o frase y muestra el texto invertido.
+
+fun invertirCadena(cadena: String): String {
+    val cadenaInvertida = mutableListOf<Char>()
+
+    for (i in cadena.length - 1 downTo 0) {
+        cadenaInvertida.add(cadena[i])
+    }
+
+    return cadenaInvertida.joinToString("")
+}
+
+
+// Crea una función que determine si un número es primo o no.
+
+fun numeroPrimos(numero: Int): String {
+    if (numero < 2) return "No es primo"
+
+    var suma = 0
+    var cont = 1
+
+    while (cont <= numero) {
+        if (numero % cont == 0) {
+            suma++
+        }
+        cont++
+    }
+
+    return if (suma == 2) "Es primo" else "No es primo"
+}
+
+
+// Una función que determine si una palabra o frase es un palíndromo.
+
+fun deteccionPalindromo(cadena: String): String {
+
+    // Se limpia la cadena conviertiendola en minusculas y remplazando las vocales con acentos en vocales sin acentos    
+    val cadenaLimpia = cadena
+        .lowercase()
+        .replace("á", "a")
+        .replace("é", "e")
+        .replace("í", "i")
+        .replace("ó", "o")
+        .replace("ú", "u")
+        .replace(" ", "")  
+
+    // Se crea una lista mutable para guardar cada caracter de la cadena que ingreso el usuarios    
+    val listaCadenaInvertida = mutableListOf<Char>()
+
+    // Con este ciclo recorremos la cadena de derecha a izquierda
+    for (i in cadenaLimpia.length - 1 downTo 0) {
+        // Con este metodo añadimos cada caracter a la lista
+        listaCadenaInvertida.add(cadenaLimpia[i])
+    }
+
+    // Se convierte la lista a tipo String
+    val cadenaInvertida = listaCadenaInvertida.joinToString("")
+
+    // Se aplican condicionales y se retorna
+    return if (cadenaInvertida == cadenaLimpia) "Es palíndromo" else "No es palíndromo"
+}
